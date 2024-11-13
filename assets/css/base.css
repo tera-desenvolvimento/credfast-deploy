@@ -1,0 +1,213 @@
+*, body {
+    appearance: none;
+    margin: 0;
+    padding: 0;
+}
+
+/** Header */
+.header-container {
+    align-items: center;
+    background-color: #f9f9f9;
+    display: flex;
+    justify-content: space-between;
+    max-height: 40px;
+    padding: .5rem 1rem;
+    z-index: 10;
+    width: -webkit-fill-available;
+    border-bottom: 1px solid #e6e6e6;
+}
+
+.header-content-left button img {
+    height: 20px;
+}
+
+.header-content-left, .header-content-right {
+    display: flex;
+}
+
+.header-container button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    margin: 0;
+    padding: 0;
+}
+
+.header-content-right .user-info {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Roboto';
+    padding: 10px;
+}
+
+.header-content-right .user-info span {
+    font-size: 12px;
+    color: #545454;
+}
+
+.header-content-right .user-info b {
+    font-size: 13px;
+}
+
+.main-content-container {
+    min-height: calc(100vh - 95px);
+}
+
+/** Search */
+
+.search-container {
+    align-items: center;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    max-height: 40px;
+    padding: .5rem 1rem;
+    position: relative;
+    width: -webkit-fill-available;
+}
+
+.search-container #searchInput {
+    height: 40px;
+    padding: 0 10px;
+    width: 100vw;
+    border-radius: 8px;
+    border: none;
+    background-color: #eff0f6;
+    font-size: 12px;
+    color: #5d5d5d;
+}
+
+.search-container img {
+    position: absolute;
+    right: 20px;
+    height: 30px;
+    width: 30px;
+    border: none;
+    border-radius: 8px;
+}
+
+/* Aside Menu */
+.aside-menu-container {
+    left: -100%;
+    position: fixed;
+    top: 0;
+    transition: all .4s ease;
+    width: 250px;
+    z-index: 11;
+    height: 100vh;
+}
+
+.aside-menu-container.open {
+    left: 0;
+}
+
+.aside-menu-container .aside-menu-content {
+    height: 100%;
+}
+
+.aside-menu-container .aside-menu-content .aside-menu-content-header {
+    align-items: center;
+    background-color: #0E0762;
+    display: flex;
+    gap: 15px;
+    padding: 13px;
+    vertical-align: middle;
+}
+
+.aside-menu-container.catalog .aside-menu-content .aside-menu-content-header {
+    background-color: #002DDE;
+}
+
+.aside-menu-container .aside-menu-content .aside-menu-content-header .menu-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    margin: 7px 0 0;
+    padding: 0;
+}
+
+.aside-menu-container .aside-menu-content .aside-menu-content-header .logo-text {
+    align-items: center;
+    color: #fff;
+    display: flex;
+    font-family: "Montserrat";
+    font-size: 16px;
+    line-height: 16px;
+}
+
+.aside-menu-container .aside-menu-content .aside-menu-content-body {
+    background-color: #0E0762;
+    height: 100%;
+    padding-top: 15px;
+}
+
+.aside-menu-container.catalog .aside-menu-content .aside-menu-content-body {
+    background-color: #002DDE;
+}
+
+.aside-menu-container .aside-menu-content .aside-menu-content-body .aside-menu-list li {
+    display: flex;
+    flex-direction: column;
+    padding: 15px 13px;
+}
+
+.aside-menu-container .aside-menu-content .aside-menu-content-body .aside-menu-list li a {
+    align-items: start;
+    display: flex;
+    gap: 15px;
+    text-decoration: none;
+}
+
+.aside-menu-container .aside-menu-content .aside-menu-content-body .aside-menu-list li a b {
+    align-items: center;
+    color: #fff;
+    display: flex;
+    font-family: "Montserrat";
+    font-size: 14px;
+    line-height: 28px;
+}
+
+.logout-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    position: absolute;
+    top: 0;
+    right: 20px;
+    z-index: -100;
+    background-color: #0E0762;
+    padding: 8px;
+    border-radius: 0 0 8px 8px;
+    transition: all .4s ease;
+}
+
+.logout-menu.open {
+    top: 56px;
+    z-index: 10;
+}
+
+.logout-menu a {
+    display: flex;
+    text-decoration: none;
+    color: #eff0f6;
+    font-family: "Inter";
+    font-size: 12px;
+    gap: 8px;
+}
+
+.logout-menu button {
+    color: #eff0f6;
+    font-family: "Inter";
+    font-size: 12px;
+    display: flex;
+    gap: 8px;
+}
+
+.invert {
+    transform: rotate(180deg);
+}
+
+.hide {
+    display: none !important;
+}

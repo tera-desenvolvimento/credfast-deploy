@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="/tera.ico">
+    <title>TERA SISTEMAS - RECUPERAÇÃO DE SENHA</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/esqueci-minha-senha.css">
+</head>
+<body>
+    <section class="card-container">
+        <div class="header">
+            <b>Recuperação de Senha</b>
+            <span>Insira seus dados e recupere seu acesso</span>
+        </div>
+        <div class="input-wrapper">
+            <div class="label-wrapper">
+                <span>E-MAIL</span>
+            </div>
+            <input type="email" name="email" id="emailInput" placeholder="yourname@example.com"/>
+        </div>
+        <div class="input-wrapper">
+            <div class="label-wrapper">
+                <span>CPF / CNPJ</span>
+            </div>
+            <div class="password-wrapper">
+                <input type="cpfcnpj" name="cpfcnpj" id="cpfcnpjInput" placeholder="000.000.000-00" onkeyup="formatDocId(this,cpfCnpj)" maxlength="18"/>
+            </div>
+        </div>
+        <div class="error-message-container" id="error-message-container">
+            <span id="error-message" class="error">mensagem de erro teste</span>
+        </div>
+        <div class="btn-wrapper">
+            <button id="buttonRequest">
+                Enviar e-mail
+            </button>
+        </div>
+    </section>
+    <section class="footer-logo">
+        <div class="logo">
+            <img src="../assets/img/t.svg" alt="logo"/>
+        </div>
+    </section>
+
+    <script src="/assets/js/misc/config.js"></script>
+    <script src="/assets/js/misc/base.js"></script>
+    <script src="/assets/js/auth/formatDoc.js"></script>
+    <script src="/assets/js/misc/sendMail.js"></script>
+    <script src="/assets/js/auth/requestPasswordRecovery.js"></script>
+</body>
+</html>

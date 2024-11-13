@@ -1,0 +1,242 @@
+#creditTable {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 35px;
+}
+
+#creditTable thead tr {
+    display: flex;
+    width: -webkit-fill-available;
+    gap: 2vw;
+    align-items: center;
+    height: 45px;
+    color: #767676;
+    font-family: 'Inter';
+    font-size: 13px;
+    background-color: #eff0f6;
+    border-bottom: 1px solid #e6e6e6;
+    padding-left: 10px; /* Adiciona espaçamento interno aos elementos */
+}
+
+#creditTable tbody tr {
+    display: flex;
+    width: -webkit-fill-available;
+    gap: 2vw;
+    align-items: center;
+    height: fit-content;
+    color: #767676;
+    font-family: 'Inter';
+    font-size: 13px;
+    border-bottom: 1px solid #d5d5d5;
+    padding: 5px 10px;
+}
+
+#creditTable tbody tr.paid {
+    color: #00B649;
+}
+
+#creditTable tbody tr.paid .value {
+    color: #ff7b00;
+}
+
+#creditTable tbody tr.paid a {
+    color: #00B649;
+}
+
+#creditTable tbody tr.quited {
+    color: #00B649;
+}
+
+#creditTable tbody tr.quited a {
+    color: #00B649;
+}
+
+
+#creditTable a {
+    text-decoration: none;
+    color: #767676;
+}
+
+#creditTable tbody tr td,
+#creditTable thead tr td {
+    text-align: center;
+}
+
+#creditTable tbody tr td:nth-child(1),
+#creditTable thead tr td:nth-child(1) {
+    width: 10%; /* Largura da coluna 'ID' */
+    padding-right: 10px;
+}
+
+#creditTable tbody tr td:nth-child(2),
+#creditTable thead tr td:nth-child(2) {
+    width: 30%; /* Largura da coluna 'Nome' */
+}
+
+#creditTable tbody tr td:nth-child(3),
+#creditTable thead tr td:nth-child(3) {
+    width: 10%; /* Largura da coluna 'Cota' */
+    text-align: center;
+}
+
+#creditTable tbody tr td:nth-child(4),
+#creditTable thead tr td:nth-child(4) {
+    width: 10%; /* Largura da coluna 'Último Valor' */
+    text-align: center;
+}
+
+#creditTable tbody tr td:nth-child(5),
+#creditTable thead tr td:nth-child(5) {
+    width: 10%; /* Largura da coluna 'Valor Pagamento' */
+    text-align: center;
+}
+
+#creditTable tbody tr td:nth-child(6),
+#creditTable thead tr td:nth-child(6) {
+    width: 10%;
+    padding-right: 10px;
+}
+
+.pay-button {
+    margin-left: auto; /* Move o botão de pagamento para a direita */
+    background-color: #0e0762;
+    color: #e0b7b7;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 8px; /* Aumenta o espaçamento interno do botão */
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.pay-button {
+    margin-left: auto; /* Move o botão de pagamento para a direita */
+    margin-right: 10px;
+    background-color: #0e0762;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 8px; /* Aumenta o espaçamento interno do botão */
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.pay-button:hover {
+    background-color: #0c054e;
+}
+
+.new-credit-container {
+    position: sticky;
+    left: 10px;
+    bottom: 20px;
+    display: flex;
+    gap: 10px;
+}
+
+.new-credit-link {
+    height: fit-content;
+    background-color: #0e0762;
+    border: none;
+    border-radius: 8px;
+    padding: 10px;
+    text-decoration: none;
+    color: #d6d7e3;
+    font-family: 'Inter';
+    font-size: 13px;
+}
+
+.pay-debit-container {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+
+    &.hide {
+        display: none;
+    }
+
+    .blurred-bg {
+        background-color: #7676768d;
+        width: 100vw;
+        height: 100vh;
+        position: absolute;
+        top: 0;
+        z-index: 10;
+    }
+
+    .pay-debit-wrapper {
+        display: flex;
+        flex-direction: column;
+        background-color: #0e0762;
+        padding: 30px;
+        border-radius: 8px;
+        font-family: 'Inter';
+        color: #ffffff;
+        z-index: 12;
+    }
+
+    .pay-debit-wrapper b.title {
+        font-weight: 700;
+        width: 70%;
+        text-align: center;
+        align-self: center;
+        padding-bottom: 20px;
+    }
+
+    .pay-debit-wrapper b#nomeCliente {
+        font-weight: 400;
+        padding-bottom: 10px;
+    }
+
+    .pay-debit-wrapper form {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .pay-debit-wrapper form div {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .pay-debit-wrapper form button {
+        height: 40px;
+        width: 150px;
+        align-self: center;
+        border: none;
+        border-radius: 8px;
+        font-family: 'Inter';
+        font-size: 12px;
+        background-color: #ffffff;
+        color: #0c054e;
+    }
+
+    .pay-debit-wrapper input[type="number"] {
+        height: 30px;
+        font-family: 'Mulish', sans-serif;
+        font-size: 12px;
+        font-weight: 800;
+        height: 30px;
+        border-radius: 8px;
+        padding-left: 15px;
+        border: solid 1px #f0f1f7;
+        color: #0e0762;
+    }
+
+    .pay-debit-wrapper select {
+        height: 30px;
+        font-family: 'Mulish', sans-serif;
+        font-size: 12px;
+        font-weight: 800;
+        height: 30px;
+        border-radius: 8px;
+        padding: 5px;
+        border: solid 1px #f0f1f7;
+        color: #0e0762;
+    }
+
+}

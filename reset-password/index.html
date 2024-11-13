@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="/tera.ico">
+    <title>TERA SISTEMAS - RESET DE SENHA</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/login.css">
+</head>
+<body>
+    <section class="card-container">
+        <div class="header">
+            <b>Reset de Senha</b>
+            <span>Insira sua nova senha de acesso</span>
+        </div>
+        <div class="input-wrapper">
+            <div class="label-wrapper">
+                <span>NOVA SENHA</span>
+            </div>
+            <input type="password" name="password" id="passwordInput" placeholder="************"/>
+        </div>
+        <div class="input-wrapper">
+            <div class="label-wrapper">
+                <span>CONFIRMAR NOVA SENHA</span>
+            </div>
+            <div class="password-wrapper">
+                <input type="password" name="confirmPassword" id="confirmPasswordInput" placeholder="************"/>
+            </div>
+        </div>
+        <div class="error-message-container" id="error-message-container">
+            <span id="error-message" class="error">mensagem de erro teste</span>
+        </div>
+        <div class="btn-wrapper">
+            <button id="buttonRequest">
+                Alterar senha
+            </button>
+        </div>
+    </section>
+    <section class="footer-logo">
+        <div class="logo">
+            <img src="../assets/img/t.svg" alt="logo"/>
+        </div>
+    </section>
+
+    <script src="/assets/js/misc/config.js"></script>
+    <script src="/assets/js/misc/base.js"></script>
+    <script src="/assets/js/auth/resetPassword.js"></script>
+</body>
+</html>
