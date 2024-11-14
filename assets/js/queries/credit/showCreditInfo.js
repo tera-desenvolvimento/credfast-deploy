@@ -53,7 +53,8 @@ async function showDebitInfo() {
     valueRemaingEl.innerHTML = "R$ " + response.valueRemaing;
     
     if (response.paymentModel == "daily") { paymentModelEl.innerHTML = "Diária" }
-    else if (response.paymentModel == "weekly") { paymentModelEl.innerHTML = "Semanal" };
+    else if (response.paymentModel == "weekly") { paymentModelEl.innerHTML = "Semanal" }
+    else if (response.paymentModel == "unique") { paymentModelEl.innerHTML = "30 Dias" };
 
     let date = response.firstPaymentDate.toString().split('T')[0];
     firstPaymentDateEl.innerHTML = formateAMerdaDaData(date);

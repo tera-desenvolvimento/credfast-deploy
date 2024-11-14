@@ -131,20 +131,21 @@
                 </div>
                 <div class="valor-container">
                     <b>Valor Total</b>
-                    <input type="number" name="totalCreditValue" id="totalCreditValue" required inputMode="decimal">
+                    <input type="number" name="totalCreditValue" id="totalCreditValue" required inputMode="decimal" onchange="calculateValue()">
                 </div>
                 <div class="model-container">
                     <b>Modelo</b>
                     <select name="paymentModel" id="paymentModel" onchange="hideDays()">
                         <option value="daily">Diário</option>
                         <option value="weekly">Semanal</option>
+                        <option value="unique">30 Dias</option>
                     </select>
                 </div>
             </div>
             <div class="form-wrapper horizontal">
                 <div class="diaria-container" id="diaria-container">
                     <b>Diárias</b>
-                    <select name="diarias" id="daysAmount">
+                    <select name="diarias" id="daysAmount" onchange="calculateValue()">
                         <option value="1">01</option>
                         <option value="2">02</option>
                         <option value="3">03</option>
@@ -169,9 +170,15 @@
                         <option value="22">22</option>
                         <option value="23">23</option>
                         <option value="24">24</option>
+                        <option value="25">25</option>
+                        <option value="26">26</option>
+                        <option value="27">27</option>
+                        <option value="28">28</option>
+                        <option value="29">29</option>
+                        <option value="30">30</option>
                     </select>
                 </div>
-                <div class="semanas-container hide" id="semanas-container">
+                <div class="semanas-container hide" id="semanas-container" onchange="calculateValue()">
                     <b>Semanas</b>
                     <select name="semanas" id="weeksAmount">
                         <option value="0">01</option>
@@ -188,11 +195,15 @@
                 </div>
                 <div class="data-container">
                     <b>Data do crédito</b>
-                    <input type="date" name="date" id="firstPaymentDate" required>
+                    <input type="date" name="date" id="firstPaymentDate" required required onchange="calculateDates()">
+                </div>
+                <div class="data-container hide" id="unique-payment-date">
+                    <b>Data do Pagamento</b>
+                    <input type="date" name="payment-date" id="paymentDate" disabled>
                 </div>
             </div>
 
-            <div class="form-wrapper">
+            <div class="form-wrapper" id="info-container">
                 <b>Informações do crédito</b>
                 <p>Valor final: <span id="finalValueSpan"></span></p>
                 <p>Quantidade de parcelas: <span id="paymentsAmountSpan"></span></p>

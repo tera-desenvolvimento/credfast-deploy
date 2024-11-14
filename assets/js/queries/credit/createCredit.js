@@ -2,12 +2,14 @@ const nameInput = document.getElementById('nameInput');
 const creditValueNumber = document.getElementById('creditValue');
 const daysAmountCont = document.getElementById('diaria-container');
 const weeksAmountCont = document.getElementById('semanas-container');
+const montlyPaymentCont = document.getElementById('unique-payment-date');
 const weeksAmount = document.getElementById('weeksAmount');
 const daysAmount = document.getElementById('daysAmount');
 const firstPaymentDate = document.getElementById('firstPaymentDate');
 const nameSpan = document.getElementById('nameAutocomplete');
 const idInput = document.getElementById('idInput');
 const paymentModel = document.getElementById('paymentModel');
+const infoContainer = document.getElementById('info-container');
 
 const Params = new URLSearchParams(window.location.search);
 const customerId = Params.get("cid");
@@ -44,20 +46,30 @@ function hideDays() {
     if(paymentModel.value == "weekly") {
        weeksAmountCont.classList.remove('hide');
        daysAmountCont.classList.add('hide');
+       montlyPaymentCont.classList.add('hide');
+       infoContainer.classList.remove('hide');
 
     } else if(paymentModel.value == "daily") {
         weeksAmountCont.classList.add('hide');
         daysAmountCont.classList.remove('hide');
+        montlyPaymentCont.classList.add('hide');
+        infoContainer.classList.remove('hide');
+    } else if(paymentModel.value == "unique") {
+        weeksAmountCont.classList.add('hide');
+        daysAmountCont.classList.add('hide');
+        montlyPaymentCont.classList.remove('hide');
+        infoContainer.classList.add('hide');
     }
 }
 
 function calculateDates() {
-    var weekDays = ['dom', 'seg', 'ter', 'qua', 'qui', 'sex', 'sab'];
-    var weekDay = weekDays[new Date(firstPaymentDate.value).getDay() + 1];
-    var daysToSum = parseInt(paymentsAmount);
-    var lastDate = new Date(firstPaymentDate.value);
 
     if (paymentModel.value == 'daily') {
+        var weekDays = ['dom', 'seg', 'ter', 'qua', 'qui', 'sex', 'sab'];
+        var weekDay = weekDays[new Date(firstPaymentDate.value).getDay() + 1];
+        var daysToSum = parseInt(paymentsAmount);
+        var lastDate = new Date(firstPaymentDate.value);
+
         switch (weekDay) {
             case 'seg':
                 if (daysToSum > 6 && daysToSum < 13) {
@@ -135,7 +147,7 @@ function calculateDates() {
                 lastDate.setDate(lastDate.getDate() + daysToSum);
                 break;
         }
-    } else {
+    } else if (paymentModel.value == 'weekly') {
         var weeksAmount = parseInt(paymentsAmount);
         var lastDate = new Date(firstPaymentDate.value);
 
@@ -144,6 +156,17 @@ function calculateDates() {
         } else {
             lastDate.setDate(lastDate.getDate() + (weeksAmount * 7));
         }
+    } else if (paymentModel.value == 'unique') {
+        var actualDate = new Date(firstPaymentDate.value);
+        var lastDate = new Date();
+        lastDate.setDate(actualDate.getDate() + 31);
+
+        console.log({
+            actualDate: actualDate.toISOString(),
+            paymentDate: lastDate.toISOString()
+        })
+
+        document.getElementById('paymentDate').value = lastDate.toISOString().split('T')[0];
     }
 
     
