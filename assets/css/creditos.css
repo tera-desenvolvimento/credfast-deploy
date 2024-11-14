@@ -127,7 +127,7 @@
 .new-credit-container {
     position: sticky;
     left: 10px;
-    padding-left: 10px; 
+    padding-left: 10px;
     bottom: 20px;
     display: flex;
     gap: 10px;
