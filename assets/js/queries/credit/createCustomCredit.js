@@ -60,6 +60,8 @@ function hideDays() {
         montlyPaymentCont.classList.remove('hide');
         infoContainer.classList.add('hide');
     }
+
+    calculateDates();
 }
 
 function calculateDates() {
