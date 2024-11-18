@@ -47,7 +47,7 @@ async function showDebitInfo() {
     nameEl.innerHTML = response.customerData.name;
     totalValueEl.innerHTML = "R$ " + response.totalValue;
     paymentsAmountEl.innerHTML = response.paymentsAmount;
-    paymentValueEl.innerHTML = parseFloat(response.totalValue / response.paymentsAmount).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+    paymentValueEl.innerHTML = "R$ " + (response.totalValue / response.paymentsAmount).toFixed(0);
     paidValueEl.innerHTML = "R$ " + (response.totalValue - response.valueRemaing);
     paymentsRemaingEl.innerHTML = response.paymentsRemaing;
     valueRemaingEl.innerHTML = "R$ " + response.valueRemaing;
