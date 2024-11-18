@@ -36,7 +36,7 @@ async function listCredits() {
             <tr class=${isPaidToday ? "paid" : "" }>
                 <td>${parseInt(credit.debitId.split("_")[1]).toString()}</td>
                 <td><a href="/crediarios/informativo/?debit=${credit.debitId}">${credit.customerData.name}</a></td>
-                <td>R$ ${(credit.totalValue / credit.paymentsAmount)}</td>
+                <td>${parseFloat(credit.totalValue / credit.paymentsAmount).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}</td>
                 ${!isPaidToday ? "<td></td>" : `<td class="value">R$ ${credit.payments[arrayLength][0].value}</td>` }
                 <td>${credit.payments.length}/${credit.paymentsAmount}</td>
                 <td>R$ ${credit.valueRemaing}</td>
@@ -48,7 +48,7 @@ async function listCredits() {
             <tr>
                 <td>${parseInt(credit.debitId.split("_")[1]).toString()}</td>
                 <td><a href="/crediarios/informativo/?debit=${credit.debitId}">${credit.customerData.name}</a></td>
-                <td>R$ ${(credit.totalValue / credit.paymentsAmount)}</td>
+                <td>${parseFloat(credit.totalValue / credit.paymentsAmount).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}</td>
                 <td></td>
                 <td>${credit.payments.length}/${credit.paymentsAmount}</td>
                 <td>R$ ${credit.valueRemaing}</td>
