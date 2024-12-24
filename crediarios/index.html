@@ -11,6 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/f1929b68e6.js" crossorigin="anonymous"></script>
 
     <link rel="stylesheet" href="../../assets/css/base.css">
     <link rel="stylesheet" href="../../assets/css/creditos.css">
@@ -121,6 +122,7 @@
                         <td>Ult. pag.</td>
                         <td>Saldo</td>
                         <td></td>
+                        <td></td>
                     </tr>
                 </thead>
                 <tbody id="creditList">
@@ -157,6 +159,18 @@
         </div>
     </div>
 
+    <div class="confirm-remove-container hide" id="confirm-remove-container">
+        <div class="blurred-bg" onclick="toogleConfirmRemove(event)"></div>
+        <div class="confirm-remove-wrapper">
+            <b class="title">Deseja realmente remover o crédito?</b>
+            <b id="nomeClienteRemove"></b>
+            <div class="button-wrapper">
+                <button class="cancel" onclick="toogleConfirmRemove(event)">Não</button>
+                <button class="confirm" onclick="removeCredit()">Sim</button>
+            </div>
+        </div>
+    </div>
+
     <footer class="footer-container">
 
     </footer>
@@ -167,5 +181,6 @@
     <script src="/assets/js/queries/credit/listCredits.js"></script>
     <script src="/assets/js/queries/credit/searchCredits.js"></script>
     <script src="/assets/js/queries/credit/payDebit.js"></script>
+    <script src="/assets/js/queries/credit/removeCredit.js"></script>
 </body>
 </html>

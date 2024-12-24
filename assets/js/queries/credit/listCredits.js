@@ -41,6 +41,11 @@ async function listCredits() {
                 <td>${credit.payments.length}/${credit.paymentsAmount}</td>
                 <td>R$ ${credit.valueRemaing}</td>
                 <td><button class="pay-button" data-debit-id="${credit.debitId}" data-client-name="${credit.customerData.name}">R$</button></td>
+                <td>
+                    <button class="remove-button" data-debit-id="${credit.debitId}" data-client-name="${credit.customerData.name}" onclick="toogleConfirmRemove(event)">
+                        <i class="fa-regular fa-trash" aria-hidden="true" data-debit-id="${credit.debitId}" data-client-name="${credit.customerData.name}"></i>
+                    </button>
+                </td>
             </tr>
             `
         } else {
@@ -53,6 +58,11 @@ async function listCredits() {
                 <td>${credit.payments.length}/${credit.paymentsAmount}</td>
                 <td>R$ ${credit.valueRemaing}</td>
                 <td><button class="pay-button" data-debit-id="${credit.debitId}" data-client-name="${credit.customerData.name}">R$</button></td>
+                <td>
+                    <button class="remove-button" data-debit-id="${credit.debitId}" data-client-name="${credit.customerData.name}" onclick="toogleConfirmRemove(event)">
+                        <i class="fa-regular fa-trash" aria-hidden="true" data-debit-id="${credit.debitId}" data-client-name="${credit.customerData.name}"></i>
+                    </button>
+                </td>
             </tr>
             `
         }

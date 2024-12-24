@@ -97,15 +97,27 @@
     padding-right: 10px;
 }
 
-.pay-button {
+.remove-button {
     margin-left: auto; /* Move o botão de pagamento para a direita */
-    background-color: #0e0762;
-    color: #e0b7b7;
+    background-color: #F26464;
     border: none;
     border-radius: 4px;
     padding: 8px 8px; /* Aumenta o espaçamento interno do botão */
     cursor: pointer;
-    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+}
+
+
+.remove-button:hover {
+    background-color: #ea4646;
+}
+
+.remove-button svg {
+    width: 15px;
+    height: 15px;
 }
 
 .pay-button {
@@ -128,9 +140,11 @@
     position: sticky;
     left: 10px;
     padding-left: 10px;
-    bottom: 20px;
+    bottom: 0;
     display: flex;
     gap: 10px;
+    padding: 15px 10px;
+    background-color: #ffffff;
 }
 
 .new-credit-link {
@@ -143,6 +157,73 @@
     color: #d6d7e3;
     font-family: 'Inter';
     font-size: 13px;
+}
+
+.confirm-remove-container {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+
+    &.hide {
+        display: none;
+    }
+
+   .blurred-bg {
+        background-color: #7676768d;
+        width: 100vw;
+        height: 100vh;
+        position: absolute;
+        top: 0;
+        z-index: -1;
+   }
+
+   .confirm-remove-wrapper {
+        display: flex;
+        flex-direction: column;
+        background-color: #0e0762;
+        padding: 30px;
+        border-radius: 8px;
+        font-family: 'Inter';
+        color: #ffffff;
+        z-index: 12;
+   }
+
+    .confirm-remove-wrapper b.title {
+          width: 70%;
+          text-align: center;
+          align-self: center;
+          padding-bottom: 20px;
+    }
+
+    .confirm-remove-wrapper b {
+          padding-bottom: 10px;
+    }
+
+    .confirm-remove-wrapper button {
+        height: 40px;
+        width: 150px;
+        align-self: center;
+        border: none;
+        border-radius: 8px;
+        font-family: 'Inter';
+        font-size: 15px;
+        background-color: #ffffff;
+        color: #0c054e;
+    }
+
+    .confirm-remove-wrapper button.cancel {
+        background-color: #F26464;
+        color: #ffffff;
+    }
+
+    .confirm-remove-wrapper button.confirm {
+        background-color: #58d85b;
+        color: #ffffff;
+    }
 }
 
 .pay-debit-container {
